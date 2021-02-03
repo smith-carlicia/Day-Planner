@@ -1,11 +1,13 @@
-$(document).ready( function () {
+$(document).ready(function () {
   
-  console.log(m.tostring());
+  // console.log(m.tostring());
  
     
     // 1. date and time
-    var currentWorkHour = moment().format("H");
-    ("#currentday").text(moment().format("dddd[,] MMMM Do, YYYY"));
+    var currentWorkHour = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $("#currentday").append(currentWorkHour);
+   
+
 // 2. onload function
 
 // 3. display current date (location: top of calendar (CSS))
@@ -14,15 +16,14 @@ $(document).ready( function () {
 var workHours = document.querySelector("#container");
 
 var workHours = [ "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
-var currentWorkHour = moment().format(".hour");
 for (var i = 0; i < workHours.length; i++){
     // var savedInput = localStorage.getItem(workHours[i]);
     var saveButton = $("<button>");
     // saveButton.attr("data-hours", workHours[i]);
     // textarea.text(savedInput);
-    var currentWorkHour = $("<p>");
-    currentWorkHour.attr("data-letter", workHours[i]);
-    currentWorkHour.text(workHours[i]);
+    // var currentWorkHour = $("<p>");
+    // currentWorkHour.attr("data-letter", workHours[i]);
+    // currentWorkHour.text(workHours[i]);
     
     // parsInt(workHours)
 
@@ -70,7 +71,7 @@ function workHours() {
   //   var textField = $(this).siblings("textarea").val().trim()
   //   var time = $(this).siblings(".time-block").text()
   //   localStorage.setItem(time, textField);)){
-};
+});
 
 // 11. grab the users input - saveto local storage (onclick of step 10)
 var userInput = "";
@@ -81,9 +82,9 @@ var userInput = "";
 //   }
 // });
 
-saveButton.addEventListener("click", ".save", function(event){
-  event.preventDefault();
-  searchBar("Hello");
-  textField();
-// 13. allow for the input to remain on the page - even on refresh 
-});
+// saveButton.addEventListener("click", ".save", function(event){
+//   event.preventDefault();
+//   searchBar("Hello");
+//   textField();
+// // 13. allow for the input to remain on the page - even on refresh 
+// });
